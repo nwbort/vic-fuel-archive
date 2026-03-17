@@ -1,0 +1,38 @@
+name: Daily Fuel Prices
+
+on:
+  schedule:
+    # 2pm UTC = midnight AEST — captures the previous day's delayed data
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fair-fuel-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch and archive prices
+        env:
+          FAIR_FUEL_CONSUMER_ID: ${{ secrets.FAIR_FUEL_CONSUMER_ID }}
+        run: bash scripts/fetch-prices.sh
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || {
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "data: prices for ${DATE}"
+            git push
+          }

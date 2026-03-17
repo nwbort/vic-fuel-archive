@@ -30,7 +30,7 @@ fetch_with_retry() {
   local endpoint="$1"
   local label="$2"
 
-  echo "Fetching ${label}..."
+  echo "Fetching ${label}..." >&2
 
   local response http_code body
 

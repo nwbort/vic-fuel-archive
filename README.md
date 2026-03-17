@@ -69,10 +69,31 @@ From the GitHub Actions tab, select either workflow and click **Run workflow**. 
 
 ## Attribution
 
+© State of Victoria accessed via the Victorian Government Service Victoria Platform
+
 This project uses data from the **Fair Fuel Open Data API** provided by **Service Victoria**, Victorian Government. Data is published with a ~24 hour delay from retailer submissions.
 
-Use of this data is subject to Service Victoria's terms of use.
+Use of this data is subject to [Service Victoria's Terms and Acceptable Use Policy](https://service.vic.gov.au/find-services/transport-and-driving/servo-saver/help-centre/servo-saver-public-api/terms-and-acceptable-use-policy).
 
 ## Licence
 
-The code in this repository is provided under the [MIT Licence](https://opensource.org/licenses/MIT). The fuel price data itself is subject to Service Victoria's terms.
+The **code** in this repository is provided under the [MIT Licence](https://opensource.org/licenses/MIT).
+
+The **fuel price data and reference datasets** are licensed under the [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), subject to any additional API Licence Terms applied by Service Victoria.
+
+## Terms of use for downstream users
+
+If you use or redistribute data from this archive, you must comply with:
+
+- [Service Victoria's Terms and Acceptable Use Policy](https://service.vic.gov.au/find-services/transport-and-driving/servo-saver/help-centre/servo-saver-public-api/terms-and-acceptable-use-policy)
+- The [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) licence conditions (including attribution)
+- All applicable Victorian and Australian privacy and data protection laws
+
+You must not use this data for the purpose of:
+
+- providing information to a foreign government;
+- espionage or deception that could harm any Australian government;
+- creating a database of individuals for marketing purposes; or
+- creating any application that is designed to, or has the potential to, harm any individual, government entity, or private organisation.
+
+See [Service Victoria's Terms and Acceptable Use Policy](https://service.vic.gov.au/find-services/transport-and-driving/servo-saver/help-centre/servo-saver-public-api/terms-and-acceptable-use-policy) for full details.

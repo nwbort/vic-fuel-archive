@@ -77,6 +77,14 @@ if [[ -f "$STATIONS_RAW" ]]; then
   echo "Stations file already exists for ${DATE} — skipping."
 else
   STATIONS=$(fetch_with_retry "/fuel/reference-data/stations" "stations")
+  # Strip contactPhone fields to avoid storing personal information (ToS clause 7)
+  STATIONS=$(echo "$STATIONS" | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+for s in data.get('fuelStations', []):
+    s.pop('contactPhone', None)
+json.dump(data, sys.stdout, separators=(',', ':'))
+")
   echo "$STATIONS" > "$STATIONS_RAW"
   echo "Saved $STATIONS_RAW"
 fi

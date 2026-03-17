@@ -1,0 +1,38 @@
+name: Weekly Reference Data
+
+on:
+  schedule:
+    # 3pm UTC Sunday — one hour after daily prices to avoid overlap
+    - cron: "0 15 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fair-fuel-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch-reference:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch reference data
+        env:
+          FAIR_FUEL_CONSUMER_ID: ${{ secrets.FAIR_FUEL_CONSUMER_ID }}
+        run: bash scripts/fetch-reference.sh
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || {
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "data: reference data for ${DATE}"
+            git push
+          }

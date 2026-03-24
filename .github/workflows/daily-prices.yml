@@ -21,6 +21,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Install dependencies
+        run: pip install pyarrow
+
       - name: Fetch and archive prices
         env:
           FAIR_FUEL_CONSUMER_ID: ${{ secrets.FAIR_FUEL_CONSUMER_ID }}

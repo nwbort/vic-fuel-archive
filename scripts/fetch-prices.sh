@@ -3,12 +3,12 @@ set -euo pipefail
 
 # Fair Fuel Open Data API — daily price fetcher
 # Fetches all Victorian fuel station prices and archives the raw JSON,
-# then flattens into an append-only CSV.
+# then flattens into an append-only Parquet file.
 
 BASE_URL="https://api.fuel.service.vic.gov.au/open-data/v1"
 DATE=$(date -u +%Y-%m-%d)
 RAW_DIR="data/raw/prices"
-CSV_FILE="data/processed/prices.csv"
+PARQUET_FILE="data/processed/prices.parquet"
 RAW_FILE="${RAW_DIR}/prices-${DATE}.json.gz"
 
 # --- Pre-flight checks ---
@@ -81,28 +81,9 @@ echo "Got HTTP 200 — archiving raw response..."
 echo "$BODY" | gzip > "$RAW_FILE"
 echo "Saved $RAW_FILE"
 
-# --- Flatten to CSV ---
-echo "Flattening to ${CSV_FILE}..."
+# --- Flatten to Parquet ---
+echo "Flattening to ${PARQUET_FILE}..."
 
-# Write header if file doesn't exist
-if [[ ! -f "$CSV_FILE" ]]; then
-  echo "date,station_id,brand_id,fuel_type,price,is_available,price_updated_at" > "$CSV_FILE"
-fi
+echo "$BODY" | python3 scripts/flatten-prices.py "$DATE" "$PARQUET_FILE"
 
-# Use jq to flatten the nested JSON structure
-echo "$BODY" | jq -r --arg date "$DATE" '
-  .fuelPriceDetails[] |
-  .fuelStation as $station |
-  .fuelPrices[] |
-  [
-    $date,
-    $station.id,
-    $station.brandId,
-    .fuelType,
-    (if .price == null or (.price | type) == "object" then "" else (.price | tostring) end),
-    (if .isAvailable then "true" else "false" end),
-    (.updatedAt // "")
-  ] | @csv
-' >> "$CSV_FILE"
-
-echo "Done — appended prices for ${DATE} to ${CSV_FILE}"
+echo "Done — appended prices for ${DATE} to ${PARQUET_FILE}"

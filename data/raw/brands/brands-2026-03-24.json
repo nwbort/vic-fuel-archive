@@ -1,0 +1,579 @@
+{
+  "brands": [
+    {
+      "id": "a03Ol00000NiMxWIAV",
+      "name": "7-Eleven",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxVIAV",
+      "name": "Ampol",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000OhlFZIAZ",
+      "name": "Apco Service Stations",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000WQT5dIAH",
+      "name": "APOLLO FUEL",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XLdGHIA1",
+      "name": "Arrow Petroleum",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxhIAF",
+      "name": "ASTRON",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxUIAV",
+      "name": "Atlas",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000QwiueIAB",
+      "name": "Auto Plus More",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000WHkX5IAL",
+      "name": "Barnawartha general store",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XPGJVIA5",
+      "name": "BARNAWARTHA STORE",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000X6yOHIAZ",
+      "name": "Barny Cafe & Restaurant",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000WW5uzIAD",
+      "name": "BARNY STORE",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000W7OeJIAV",
+      "name": "Bentleys Fuel Service",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxiIAF",
+      "name": "Better Choice",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000Vo9cYIAR",
+      "name": "Bittern Motors",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000P7U6DIAV",
+      "name": "Bowser Bean",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxTIAV",
+      "name": "BP",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000Sej9aIAB",
+      "name": "BP Bowser Bean",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000WEbdCIAT",
+      "name": "Brighton Petroleum",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxjIAF",
+      "name": "Budget",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxSIAV",
+      "name": "Burk",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000WDEFgIAP",
+      "name": "Caledonian Garage",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxlIAF",
+      "name": "Caltex",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxkIAF",
+      "name": "Caltex Woolworths",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000RQndTIAT",
+      "name": "CARMODY PETROLEUM",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxmIAF",
+      "name": "CGL Fuel",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxRIAV",
+      "name": "Chargefox",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxfIAF",
+      "name": "ChargePoint",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxeIAF",
+      "name": "Coles Express",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxnIAF",
+      "name": "Costco",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000VrFByIAN",
+      "name": "Cranbo",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000V4CtaIAF",
+      "name": "dayef",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000TSpuwIAD",
+      "name": "Dayef  Petroleum",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000RMeH0IAL",
+      "name": "Des Brown Service Centre",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxbIAF",
+      "name": "Dunnings",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxQIAV",
+      "name": "Eagle",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000UZdzkIAD",
+      "name": "Eagle Group",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxoIAF",
+      "name": "EG Ampol",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxPIAV",
+      "name": "ELGAS BOC",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000OuYHJIA3",
+      "name": "Endeavour Energy Fuels",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxpIAF",
+      "name": "Enhance",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxOIAV",
+      "name": "Everty",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxqIAF",
+      "name": "Evie Networks",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxrIAF",
+      "name": "EVUp",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxNIAV",
+      "name": "Exploren",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000UwY01IAF",
+      "name": "FAST FUEL",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxsIAF",
+      "name": "FastFuel 24/7",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000WHHy5IAH",
+      "name": "FUEL PLUS",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000TAjMXIA1",
+      "name": "FUEL ZONE",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XOjx4IAD",
+      "name": "FUSION",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000OrwknIAB",
+      "name": "GEL Motors",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxcIAF",
+      "name": "Gull",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000S7ZNVIA3",
+      "name": "Haddon General Store",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XKfX3IAL",
+      "name": "Harrison's Fuel & Cafe",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000Xh2OXIAZ",
+      "name": "Hilditch Fuels",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxgIAF",
+      "name": "Independent",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxMIAV",
+      "name": "Independent EV",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxLIAV",
+      "name": "Inland Petroleum",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000PNLVBIA5",
+      "name": "iOR",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000RnmwqIAB",
+      "name": "Jamieson Service Station",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000Rb2uXIAR",
+      "name": "Jerusalem Creek Marina & Holiday Park",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxYIAV",
+      "name": "JOLT",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxKIAV",
+      "name": "Liberty",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000PoHGzIAN",
+      "name": "Little Sam's Service Station",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxuIAF",
+      "name": "Lowes",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000XOdqEIAT",
+      "name": "MEDCO",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000SW2jJIAT",
+      "name": "METCO",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxJIAV",
+      "name": "Metro Fuel",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxvIAF",
+      "name": "Metro Petroleum",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000Ti59lIAB",
+      "name": "MILDURA SERVO",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMyBIAV",
+      "name": "Mobil",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000PGw01IAD",
+      "name": "Mogas",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XIeSDIA1",
+      "name": "Morgan Fuel",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000SSmkoIAD",
+      "name": "Mortimer Petroleum",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000XNUaMIAX",
+      "name": "Navarre General Store",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000OEJ9qIAH",
+      "name": "NH-brand-one",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxZIAV",
+      "name": "NRMA",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000O13SjIAJ",
+      "name": "On The Run",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxIIAV",
+      "name": "Other",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000OjcHrIAJ",
+      "name": "Pacific Fuel Solutions",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMyAIAV",
+      "name": "Pearl Energy",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000QXZrJIAX",
+      "name": "Peninsula Gas & Fuel",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMy9IAF",
+      "name": "Perrys",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy8IAF",
+      "name": "Petro Fuels",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxwIAF",
+      "name": "Phoenix",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000XQXBpIAP",
+      "name": "Powerfuel",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxXIAV",
+      "name": "Puma",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy7IAF",
+      "name": "Reddy Express",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000Pf5BpIAJ",
+      "name": "Refueling Solutions",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMyDIAV",
+      "name": "Riordan Fuels",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000QITPZIA5",
+      "name": "R R D FUELS",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxdIAF",
+      "name": "Shell",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000Sets5IAB",
+      "name": "Shell Bowser Bean",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000PUOOIIA5",
+      "name": "SINOPEC",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000TdV1dIAF",
+      "name": "Snake valley milkbar",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000PhFjoIAF",
+      "name": "Solo",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000W3ULiIAN",
+      "name": "SOMERVILLE SERVO 24/7",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxxIAF",
+      "name": "South West",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxyIAF",
+      "name": "Speedway",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxzIAF",
+      "name": "Tesla",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000XFExJIAX",
+      "name": "Test",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000VhTL3IAN",
+      "name": "Texan Petroleum",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000P3Tv7IAF",
+      "name": "The Grampians Store Pomonal",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000WHSf1IAH",
+      "name": "Timberline General Store",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMy0IAF",
+      "name": "Transwest Fuels",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy1IAF",
+      "name": "U-Go",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy2IAF",
+      "name": "Ultra Petroleum",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy3IAF",
+      "name": "United",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMxtIAF",
+      "name": "Vibe",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000QnHf5IAF",
+      "name": "Viva Energy",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMxaIAF",
+      "name": "WA Fuels",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy4IAF",
+      "name": "Westside",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000XQnJrIAL",
+      "name": "WongaPark",
+      "type": "independent"
+    },
+    {
+      "id": "a03Ol00000NiMy5IAF",
+      "name": "Woodham Petroleum",
+      "type": "major"
+    },
+    {
+      "id": "a03Ol00000NiMy6IAF",
+      "name": "X Convenience",
+      "type": "major"
+    }
+  ]
+}

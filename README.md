@@ -4,8 +4,8 @@ Automated daily archive of Victorian fuel prices from the [Fair Fuel Open Data A
 
 ## What this does
 
-- **Daily** (2 pm UTC / midnight AEST): fetches all fuel station prices across Victoria, saves the raw JSON (gzipped), and appends a flat row per station/fuel-type to `data/processed/prices.csv`.
-- **Weekly** (3 pm UTC Sunday): fetches reference data — stations, brands, and fuel types — and saves both dated snapshots and convenience "latest" copies.
+- **Daily** (2 pm UTC / midnight AEST): fetches all fuel station prices across Victoria, saves the raw JSON (gzipped), and appends a flat row per station/fuel-type to `data/processed/prices.parquet`.
+- **Weekly** (3 pm UTC Sunday): fetches reference data — stations, brands, and fuel types. Dated snapshots and convenience "latest" copies are only saved when the data has actually changed.
 
 All data is committed back to the repository automatically.
 
@@ -33,7 +33,7 @@ Data comes from the **Victorian Fair Fuel Open Data API**, published by Service 
 │   │   ├── brands/              # brands-YYYY-MM-DD.json
 │   │   └── types/               # types-YYYY-MM-DD.json
 │   ├── processed/
-│   │   └── prices.csv           # Append-only flat CSV
+│   │   └── prices.parquet       # Append-only Parquet (zstd compressed)
 │   └── reference/
 │       ├── stations.json        # Latest station metadata
 │       ├── brands.json          # Latest brand lookup
@@ -41,19 +41,26 @@ Data comes from the **Victorian Fair Fuel Open Data API**, published by Service 
 └── README.md
 ```
 
-## CSV schema (`data/processed/prices.csv`)
+## Parquet schema (`data/processed/prices.parquet`)
 
-| Column | Description |
-|---|---|
-| `date` | Fetch date (YYYY-MM-DD) |
-| `station_id` | Fuel station identifier (join with `stations.json`) |
-| `brand_id` | Brand identifier (join with `brands.json`) |
-| `fuel_type` | Fuel type code, e.g. U91, P95, DSL (join with `types.json`) |
-| `price` | Price in AUD cents per litre (empty string if unavailable) |
-| `is_available` | `true` or `false` |
-| `price_updated_at` | ISO 8601 timestamp of last price update |
+| Column | Type | Description |
+|---|---|---|
+| `date` | string | Fetch date (YYYY-MM-DD) |
+| `station_id` | string | Fuel station identifier (join with `stations.json`) |
+| `brand_id` | string | Brand identifier (join with `brands.json`) |
+| `fuel_type` | string | Fuel type code, e.g. U91, P95, DSL (join with `types.json`) |
+| `price` | float32 | Price in AUD cents per litre (null if unavailable) |
+| `is_available` | bool | Whether the fuel type is currently available |
+| `price_updated_at` | string | ISO 8601 timestamp of last price update |
 
-Prices are in **cents per litre** with one decimal place (e.g. `165.0` = $1.65/L). When a fuel type is unavailable at a station, `price` will be empty and `is_available` will be `false`.
+Prices are in **cents per litre** with one decimal place (e.g. `165.0` = $1.65/L). When a fuel type is unavailable at a station, `price` will be null and `is_available` will be `false`.
+
+The file uses **zstd compression** and can be read with any Parquet-compatible tool (pandas, DuckDB, Polars, etc.):
+
+```python
+import pandas as pd
+df = pd.read_parquet("data/processed/prices.parquet")
+```
 
 ## Setup
 

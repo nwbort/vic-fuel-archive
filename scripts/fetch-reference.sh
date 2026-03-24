@@ -69,6 +69,29 @@ fetch_with_retry() {
   echo "$body"
 }
 
+# --- Helper: save only if data has changed from the latest snapshot ---
+save_if_changed() {
+  local label="$1"
+  local raw_file="$2"
+  local raw_dir="$3"
+  local ref_file="$4"
+  local data="$5"
+
+  # Find the most recent existing snapshot
+  local latest
+  latest=$(ls -1 "${raw_dir}"/*.json 2>/dev/null | sort | tail -1)
+
+  if [[ -n "$latest" ]] && printf '%s' "$data" | diff -q - "$latest" > /dev/null 2>&1; then
+    echo "${label} data unchanged from $(basename "$latest") — skipping."
+    return
+  fi
+
+  printf '%s' "$data" > "$raw_file"
+  echo "Saved $raw_file"
+  cp "$raw_file" "$ref_file"
+  echo "Updated $ref_file"
+}
+
 # --- Fetch and save each reference dataset ---
 
 # Stations
@@ -85,11 +108,8 @@ for s in data.get('fuelStations', []):
     s.pop('contactPhone', None)
 json.dump(data, sys.stdout, separators=(',', ':'))
 ")
-  echo "$STATIONS" > "$STATIONS_RAW"
-  echo "Saved $STATIONS_RAW"
+  save_if_changed "Stations" "$STATIONS_RAW" "data/raw/stations" "data/reference/stations.json" "$STATIONS"
 fi
-cp "$STATIONS_RAW" data/reference/stations.json
-echo "Updated data/reference/stations.json"
 
 # Brands
 BRANDS_RAW="data/raw/brands/brands-${DATE}.json"
@@ -97,11 +117,8 @@ if [[ -f "$BRANDS_RAW" ]]; then
   echo "Brands file already exists for ${DATE} — skipping."
 else
   BRANDS=$(fetch_with_retry "/fuel/reference-data/brands" "brands")
-  echo "$BRANDS" > "$BRANDS_RAW"
-  echo "Saved $BRANDS_RAW"
+  save_if_changed "Brands" "$BRANDS_RAW" "data/raw/brands" "data/reference/brands.json" "$BRANDS"
 fi
-cp "$BRANDS_RAW" data/reference/brands.json
-echo "Updated data/reference/brands.json"
 
 # Fuel types
 TYPES_RAW="data/raw/types/types-${DATE}.json"
@@ -109,10 +126,7 @@ if [[ -f "$TYPES_RAW" ]]; then
   echo "Types file already exists for ${DATE} — skipping."
 else
   TYPES=$(fetch_with_retry "/fuel/reference-data/types" "fuel types")
-  echo "$TYPES" > "$TYPES_RAW"
-  echo "Saved $TYPES_RAW"
+  save_if_changed "Types" "$TYPES_RAW" "data/raw/types" "data/reference/types.json" "$TYPES"
 fi
-cp "$TYPES_RAW" data/reference/types.json
-echo "Updated data/reference/types.json"
 
 echo "Done — all reference data fetched for ${DATE}."
